@@ -1,19 +1,20 @@
 import "./assets/css/base/base.css";
 import "./assets/css/componentes/card.css";
 import Home from "./pages/Home.jsx";
+import Page404 from "./pages/Page404";
 import Sobre from "./pages/Sobre.jsx";
+import Header from "./componentes/Header";
+//Se importa el Router, las rutas y la ruta
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
-  //windows.location es un objeto
-  //una de sus propiedades es pathname que da el inico de la ruta donde se encuenta.
-
-  //Route es la ruta y necesita dos condiciones el Path y el elemento a mostrar
   return (
     <>
       <Router>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Sobre" element={<Sobre />} />
+          <Route path="/sobre" element={<Sobre />} />
+          <Route path="*" element={<Page404 />} />
         </Routes>
       </Router>
     </>
